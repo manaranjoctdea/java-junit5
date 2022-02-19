@@ -8,14 +8,17 @@ import org.junit.jupiter.api.Test;
 /**
  * Session 1: GreeterTest - Your first tests.
  */
+@DisplayName("GreeterTest")
 class Session1_GreeterTest {
 
     // TODO We will add the proper assertions together.
     
     @Test
+    @DisplayName("should return 'Hello Peter' for 'Peter'")
     void shouldReturnHelloName() {
         Greeter greeter = new Greeter();
         // TODO Check that "Hello Peter", greeter.greet("Peter").
+        assertEquals("Hello Peter", greeter.greet("Peter"));
     }
 
     @Test
@@ -23,11 +26,14 @@ class Session1_GreeterTest {
     void shouldReturnHelloForNull() {
         Greeter greeter = new Greeter();
         // TODO Check that "Hello", greeter.greet(null).
+        assertEquals("Hello", greeter.greet(null));
     }
 
     @Test
+    @DisplayName("should return 'Hello Peter' ignoring spaces for '  Peter  '")
     void shouldIgnoreWhitespace() {
         Greeter greeter = new Greeter();
         // TODO Check that "Hello Peter", greeter.greet(" Peter ").
+        assertEquals("Hello Peter", greeter.greet("   Peter    "));
     }
 }
